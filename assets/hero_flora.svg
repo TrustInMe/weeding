@@ -1,0 +1,106 @@
+<svg width="1440" height="900" viewBox="0 0 1440 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Ботанический фон обложки: розы + эвкалипт по углам, кремовое полотно -->
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1440" y2="900" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#F9F6EF"/>
+      <stop offset="0.55" stop-color="#F3EFE5"/>
+      <stop offset="1" stop-color="#EDF1E4"/>
+    </linearGradient>
+    <radialGradient id="blush" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#E8C9C4"/>
+      <stop offset="1" stop-color="#D8AEAE"/>
+    </radialGradient>
+    <radialGradient id="rose" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#8A3244"/>
+      <stop offset="1" stop-color="#6B2230"/>
+    </radialGradient>
+    <radialGradient id="leaf" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#A9C08C"/>
+      <stop offset="1" stop-color="#7E9A63"/>
+    </radialGradient>
+    <!-- Роза: спиральные лепестки -->
+    <g id="roseB">
+      <circle r="46" fill="url(#rose)"/>
+      <path d="M0,-38 C18,-34 32,-20 34,0 C32,20 18,34 0,36 C-16,30 -28,16 -28,-2 C-24,-18 -12,-30 0,-38 Z" fill="#7A2A39" opacity="0.85"/>
+      <path d="M0,-26 C12,-22 20,-12 20,0 C18,12 10,20 0,22 C-10,18 -16,8 -14,-2 C-10,-14 -4,-20 0,-26 Z" fill="#93394B" opacity="0.9"/>
+      <path d="M0,-14 C6,-12 10,-6 10,0 C8,6 4,10 0,11 C-5,8 -8,2 -6,-4 C-4,-8 -2,-11 0,-14 Z" fill="#A4465A"/>
+      <path d="M-2,-6 C2,-5 4,-2 4,1 C3,4 1,5 -1,5 C-3,4 -4,1 -3,-1 C-2,-3 -2,-5 -2,-6 Z" fill="#B25567"/>
+    </g>
+    <g id="roseP">
+      <circle r="34" fill="url(#blush)"/>
+      <path d="M0,-28 C13,-25 23,-15 24,0 C22,15 13,25 0,27 C-12,22 -20,12 -20,-1 C-17,-13 -9,-22 0,-28 Z" fill="#D9B4B0" opacity="0.9"/>
+      <path d="M0,-17 C8,-15 13,-8 13,0 C11,8 6,13 0,14 C-7,11 -11,4 -9,-3 C-7,-9 -3,-13 0,-17 Z" fill="#E3C2BE"/>
+      <path d="M-1,-8 C3,-7 5,-4 5,0 C4,3 2,4 0,4 C-2,3 -3,0 -2,-2 C-2,-4 -1,-6 -1,-8 Z" fill="#EFD8D5"/>
+    </g>
+    <!-- Бутон -->
+    <g id="bud">
+      <ellipse rx="12" ry="18" fill="url(#rose)" transform="rotate(25)"/>
+      <path d="M2,-16 C9,-11 11,0 7,10 C3,14 -4,13 -7,7 C-10,-2 -6,-12 2,-16 Z" fill="#7A2A39" opacity="0.6" transform="rotate(25)"/>
+    </g>
+    <!-- Эвкалиптовая веточка: стебель + округлые листья -->
+    <g id="branch">
+      <path d="M0,0 C40,-18 90,-30 150,-34" stroke="#7E9A63" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+      <g fill="url(#leaf)">
+        <ellipse cx="18" cy="-6" rx="13" ry="8.5" transform="rotate(-24 18 -6)"/>
+        <ellipse cx="38" cy="-13" rx="14" ry="9" transform="rotate(-20 38 -13)"/>
+        <ellipse cx="60" cy="-20" rx="14" ry="9" transform="rotate(-18 60 -20)"/>
+        <ellipse cx="82" cy="-26" rx="13.5" ry="8.5" transform="rotate(-14 82 -26)"/>
+        <ellipse cx="104" cy="-30" rx="13" ry="8" transform="rotate(-10 104 -30)"/>
+        <ellipse cx="126" cy="-33" rx="12" ry="7.5" transform="rotate(-6 126 -33)"/>
+      </g>
+      <g fill="#B7C9A8" opacity="0.9">
+        <ellipse cx="28" cy="4" rx="12" ry="8" transform="rotate(22 28 4)"/>
+        <ellipse cx="50" cy="8" rx="12.5" ry="8" transform="rotate(18 50 8)"/>
+        <ellipse cx="72" cy="10" rx="12" ry="7.5" transform="rotate(13 72 10)"/>
+        <ellipse cx="94" cy="9" rx="11.5" ry="7" transform="rotate(8 94 9)"/>
+        <ellipse cx="115" cy="7" rx="11" ry="6.5" transform="rotate(4 115 7)"/>
+      </g>
+    </g>
+    <!-- Мелкие ягодки/жемчужины -->
+    <g id="berries">
+      <circle r="4.5" fill="#C9A24B"/>
+      <circle cx="12" cy="6" r="4" fill="#D9B75F"/>
+      <circle cx="2" cy="13" r="3.8" fill="#C9A24B"/>
+      <circle cx="-10" cy="9" r="3.6" fill="#D9B75F"/>
+    </g>
+  </defs>
+
+  <rect width="1440" height="900" fill="url(#bg)"/>
+
+  <!-- Левый верхний угол -->
+  <g transform="translate(-30,-20)">
+    <use href="#branch" transform="translate(60,150) rotate(38)"/>
+    <use href="#branch" transform="translate(40,230) rotate(22) scale(1.15)"/>
+    <use href="#roseB" transform="translate(120,110) rotate(-12) scale(1.2)"/>
+    <use href="#roseP" transform="translate(215,190) rotate(30)"/>
+    <use href="#bud" transform="translate(170,64)"/>
+    <use href="#berries" transform="translate(255,120)"/>
+    <use href="#roseP" transform="translate(70,300) rotate(-18) scale(0.8)"/>
+  </g>
+
+  <!-- Правый нижний угол (зеркально) -->
+  <g transform="translate(1470,920)">
+    <use href="#branch" transform="translate(-60,-150) rotate(218)"/>
+    <use href="#branch" transform="translate(-40,-230) rotate(202) scale(1.15)"/>
+    <use href="#roseB" transform="translate(-120,-110) rotate(168) scale(1.2)"/>
+    <use href="#roseP" transform="translate(-215,-190) rotate(210)"/>
+    <use href="#bud" transform="translate(-170,-64) rotate(40)"/>
+    <use href="#berries" transform="translate(-255,-120)"/>
+    <use href="#roseP" transform="translate(-70,-300) rotate(198) scale(0.8)"/>
+  </g>
+
+  <!-- Правый верхний угол: компактный акцент -->
+  <g transform="translate(1450,-10)">
+    <use href="#branch" transform="translate(-80,110) rotate(142) scale(0.95)"/>
+    <use href="#roseP" transform="translate(-90,70) rotate(-40) scale(0.9)"/>
+    <use href="#bud" transform="translate(-150,130) rotate(-70) scale(0.9)"/>
+    <use href="#berries" transform="translate(-40,150)"/>
+  </g>
+  <!-- Левый нижний угол: компактный акцент, привязан к углу -->
+  <g transform="translate(-10,910)">
+    <use href="#branch" transform="translate(80,-110) rotate(38) scale(0.95)"/>
+    <use href="#roseP" transform="translate(90,-70) rotate(40) scale(0.9)"/>
+    <use href="#bud" transform="translate(150,-130) rotate(70) scale(0.9)"/>
+    <use href="#berries" transform="translate(40,-150)"/>
+  </g>
+</svg>

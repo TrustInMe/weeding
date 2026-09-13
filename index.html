@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- ЗАМЕНИТЕ: заголовок и описание при необходимости -->
+<title>Андрей и Ксения — наша свадьба</title>
+<meta name="description" content="Дорогие друзья! Жить, любить, чувствовать. Однажды мы поняли, что нет ничего важнее этого. И что идти дальше мы хотим только вместе.">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="icon" type="image/png" sizes="48x48" href="assets/favicon-48.png">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png">
+<link rel="apple-touch-icon" href="assets/favicon-48.png">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- ================= ИНТРО: раскрытие конверта (первый заход) ================= -->
+<div class="intro" id="intro" hidden>
+  <div class="intro__inner">
+    <div class="intro__envelope" id="introEnvelope" role="button" tabindex="0" aria-label="Открыть приглашение">
+      <div class="intro__letter">
+        <div class="intro__letter-names">Андрей <span>и</span> Ксения</div>
+        <div class="intro__letter-date">24 · 10 · 2026</div>
+      </div>
+      <div class="intro__flap"></div>
+      <div class="intro__pocket"></div>
+      <div class="intro__seal">
+        <svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor" aria-hidden="true">
+          <path d="M12 21s-7.5-4.9-9.7-9.2C.7 8.6 2.6 5 6.1 5c2 0 3.4 1.1 4.2 2.4l1.7 2.6 1.7-2.6C14.5 6.1 15.9 5 17.9 5c3.5 0 5.4 3.6 3.8 6.8C19.5 16.1 12 21 12 21z"/>
+        </svg>
+      </div>
+    </div>
+    <div class="intro__hint">Нажмите на конверт, чтобы открыть приглашение</div>
+    <button class="intro__skip" id="introSkip" type="button">Пропустить</button>
+  </div>
+</div>
+
+<!-- ================= 1. ОБЛОЖКА: дата и имена ================= -->
+<header class="hero" id="top">
+  <div class="hero__overlay hero__overlay--dark"></div>
+  <div class="hero__overlay hero__overlay--glow"></div>
+  <div class="hero__overlay hero__overlay--noise"></div>
+  <div class="hero__frame" aria-hidden="true"></div>
+  <!-- Лепестки на обложке (создаются из script.js) -->
+  <div class="petals" id="petals" aria-hidden="true"></div>
+  <div class="hero__content">
+    <!-- ЗАМЕНИТЕ: даты -->
+    <div class="hero__date" aria-label="24 октября 2026">
+      <span>24</span><span class="hero__dot">·</span><span>10</span><span class="hero__dot">·</span><span>26</span>
+    </div>
+    <div class="hero__tagline">Save the date</div>
+    <!-- ЗАМЕНИТЕ: имена -->
+    <h1 class="hero__names">Андрей<br>и Ксения</h1>
+    <div class="hero__line"></div>
+    <!-- ЗАМЕНИТЕ: город -->
+    <p class="hero__place">Россия - Нижний Новгород</p>
+    <img class="hero__branch" src="assets/branch.svg" alt="" width="42" height="88">
+  </div>
+</header>
+
+<main>
+
+<!-- ================= 2. ПРИГЛАШЕНИЕ ================= -->
+<section class="section">
+  <div class="section__inner">
+    <h2 class="section__title"><span class="section__title-text">Приглашение<span class="section__title-leaf" aria-hidden="true"></span></span></h2>
+    <!-- ЗАМЕНИТЕ: текст приглашения -->
+    <div class="invite__text">
+      <p>Дорогие друзья!</p>
+      <p>Жить, любить, чувствовать. Однажды мы поняли, что нет ничего важнее этого. И что идти дальше мы хотим только вместе. А теперь мечтаем, чтобы день нашей свадьбы стал красивым и ярким событием на этом увлекательном пути.</p>
+      <p>Мы будем очень рады, если вы разделите этот счастливый день с нами.</p>
+      <p>Увидимся на нашей свадьбе!</p>
+    </div>
+    <!-- ЗАМЕНИТЕ: фото (assets/invite_1.jpg, assets/invite_2.jpg; исходники IMG_*.heic) -->
+    <div class="invite__photos">
+      <img class="invite__photo" src="assets/invite_1.jpg" alt="Фото пары">
+      <img class="invite__photo" src="assets/invite_2.jpg" alt="Фото пары">
+    </div>
+  </div>
+</section>
+
+<div class="ornament" aria-hidden="true"><img src="assets/ornament.svg" alt=""></div>
+
+<!-- ================= 3. ПОДТВЕРДИТЬ ПРИСУТСТВИЕ ================= -->
+<section class="section" id="rsvp">
+  <div class="section__inner">
+    <h2 class="section__title"><span class="section__title-text">Подтвердить присутствие<span class="section__title-leaf" aria-hidden="true"></span></span></h2>
+    <!-- ЗАМЕНИТЕ: срок подтверждения -->
+    <p class="rsvp__deadline">Пожалуйста, подтвердите или отклоните участие до&nbsp;<strong>04.10.2026</strong>.</p>
+
+    <form class="rsvp__form" id="rsvpForm" hidden>
+      <input class="rsvp__name" type="text" name="guest_name" placeholder="Ваше имя и фамилия" required autocomplete="name">
+      <div class="rsvp__choices" role="radiogroup" aria-label="Придёте ли вы">
+        <label class="rsvp__choice">
+          <input type="radio" name="attendance" value="Буду" required>
+          <span>Буду</span>
+        </label>
+        <label class="rsvp__choice">
+          <input type="radio" name="attendance" value="Не смогу">
+          <span>Не смогу</span>
+        </label>
+      </div>
+      <button class="btn btn--dark rsvp__submit" type="submit">Отправить ответ</button>
+      <p class="rsvp__hint" id="rsvpHint" hidden></p>
+    </form>
+
+    <!-- Заглушка после успешной отправки (показывается вместо формы) -->
+    <div class="rsvp__done" id="rsvpDone" hidden>
+      <div class="rsvp__done-icon" aria-hidden="true">✓</div>
+      <p class="rsvp__done-text">Форма успешно отправлена.<br>Спасибо за ваш ответ!</p>
+    </div>
+  </div>
+</section>
+
+<div class="ornament" aria-hidden="true"><img src="assets/ornament.svg" alt=""></div>
+
+<!-- ================= 4. ОТВЕТЫ НА ВОПРОСЫ ================= -->
+<section class="section">
+  <div class="section__inner">
+    <h2 class="section__title"><span class="section__title-text">Ответы на вопросы<span class="section__title-leaf" aria-hidden="true"></span></span></h2>
+    <div class="faq">
+      <!-- ЗАМЕНИТЕ: вопрос/ответ/фото -->
+      <div class="faq__item">
+        <h3 class="faq__question">Будет ли дресс-код?</h3>
+        <p class="faq__answer">Мы будем рады, если девушки выберут вечерние или коктейльные платья/костюмы, а мужчины — костюм. Наша палитра вечера:</p>
+        <!-- Палитра дресс-кода: цвета можно менять в style у кружков -->
+        <div class="palette" role="list" aria-label="Цветовая гамма дресс-кода">
+          <div class="palette__item" role="listitem">
+            <span class="palette__dot" style="--dot:#6B2230"></span>
+            <span class="palette__name">Бордо</span>
+          </div>
+          <div class="palette__item" role="listitem">
+            <span class="palette__dot" style="--dot:#6B4A3A"></span>
+            <span class="palette__name">Коричневый</span>
+          </div>
+          <div class="palette__item" role="listitem">
+            <span class="palette__dot" style="--dot:#D9C7A7"></span>
+            <span class="palette__name">Бежевый</span>
+          </div>
+          <div class="palette__item" role="listitem">
+            <span class="palette__dot" style="--dot:#2F4A3C"></span>
+            <span class="palette__name">Тёмно-зелёный</span>
+          </div>
+        </div>
+      </div>
+      <div class="faq__item">
+        <h3 class="faq__question">Какие подарки предпочтительны?</h3>
+        <p class="faq__answer">Лучший подарок для нас — ваше присутствие и тёплые слова!<br>А если захотите порадовать нас ещё — будем счастливы получить поздравление в конверте: оно поможет воплотить мечту о свадебном путешествии&nbsp;✈</p>
+        <img class="faq__image faq__image--envelope" src="assets/faq_envelope.jpg" alt="Свадебный конверт с сургучной печатью" loading="lazy">
+      </div>
+      <div class="faq__item">
+        <h3 class="faq__question">Возможно ли приехать на своем автомобиле?</h3>
+        <p class="faq__answer">Да, на территории отеля имеется парковка. А если хочется подъехать с шиком — вдохновляйтесь!</p>
+        <img class="faq__image faq__image--wide" src="assets/faq_car.jpg" alt="Белый свадебный лимузин" loading="lazy">
+      </div>
+      <div class="faq__item">
+        <h3 class="faq__question">Кому можно задать вопросы по организации мероприятия?</h3>
+        <p class="faq__answer">Наш свадебный организатор — Лера с радостью ответит на ваши вопросы.<br>
+          Телефон: <a class="link-tel" href="tel:+79047863690">+7 904 786-36-90</a><br>
+          Telegram: <a class="link-tg" href="https://t.me/chaika_make_up1" target="_blank" rel="noopener">@chaika_make_up1</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="ornament" aria-hidden="true"><img src="assets/ornament.svg" alt=""></div>
+
+<!-- ================= 5. ПРОГРАММА ДНЯ ================= -->
+<section class="section">
+  <div class="section__inner">
+    <h2 class="section__title"><span class="section__title-text">Программа дня<span class="section__title-leaf" aria-hidden="true"></span></span></h2>
+    <!-- ЗАМЕНИТЕ: дата -->
+    <div class="schedule__date">
+      <span class="schedule__date-day">24 октября 2026</span>
+      <span class="schedule__date-weekday">суббота</span>
+    </div>
+    <div class="schedule">
+      <!-- ЗАМЕНИТЕ: пункты программы (время / название / место / координаты) -->
+      <div class="schedule__item">
+        <div class="schedule__time">15:30</div>
+        <div class="schedule__event">
+          <div class="schedule__title">Фуршет</div>
+          <div class="schedule__place">Нижний Новгород, остров Печерские пески, Оранжерея</div>
+          <a class="btn btn--dark btn--sm" href="https://yandex.ru/maps/47/nizhny-novgorod/?whatshere%5Bpoint%5D=44.069264%2C56.328511&whatshere%5Bzoom%5D=17&z=17" target="_blank" rel="noopener">Показать на карте</a>
+        </div>
+      </div>
+      <div class="schedule__item">
+        <div class="schedule__time">17:00</div>
+        <div class="schedule__event">
+          <div class="schedule__title">Свадебная церемония</div>
+        </div>
+      </div>
+      <div class="schedule__item">
+        <div class="schedule__time">18:00</div>
+        <div class="schedule__event">
+          <div class="schedule__title">Свадебный ужин</div>
+        </div>
+      </div>
+      <div class="schedule__item schedule__item--last">
+        <div class="schedule__time">23:00</div>
+        <div class="schedule__event">
+          <div class="schedule__title">Окончание вечера</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="ornament" aria-hidden="true"><img src="assets/ornament.svg" alt=""></div>
+
+<!-- ================= 6. СВАДЕБНЫЙ УЖИН И КАРТА ================= -->
+<section class="dinner">
+  <div class="dinner__head">
+    <h2 class="section__title"><span class="section__title-text">Свадебный ужин<span class="section__title-leaf" aria-hidden="true"></span></span></h2>
+    <div class="dinner__venue">Оранжерея</div>
+    <!-- ЗАМЕНИТЕ: адрес площадки -->
+    <div class="dinner__address">Нижний Новгород, остров Печерские Пески</div>
+  </div>
+  <!-- Интерактивная карта: зум/перемещение прямо на сайте. Стартовый зум — город целиком -->
+  <div class="dinner__map">
+    <iframe src="https://yandex.ru/map-widget/v1/?ll=44.069503%2C56.326893&z=11&pt=44.069264,56.328511,pm2rdm"
+            title="Карта: Оранжерея, остров Печерские Пески" allowfullscreen loading="lazy"></iframe>
+    <div class="dinner__map-card">
+      <div class="dinner__map-venue">Оранжерея</div>
+      <div class="dinner__map-addr">Нижний Новгород, остров Печерские Пески</div>
+      <a class="btn btn--map" href="https://yandex.ru/maps/47/nizhny-novgorod/?whatshere%5Bpoint%5D=44.069264%2C56.328511&whatshere%5Bzoom%5D=17&z=17" target="_blank" rel="noopener">Построить маршрут</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- Кнопка «наверх» — плавающая, сбоку -->
+<button class="to-top" id="toTop" aria-label="Наверх">
+  <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24" fill="currentColor"><path d="M480-528 296-344l-56-56 240-240 240 240-56 56-184-184Z"/></svg>
+</button>
+
+<script src="config.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

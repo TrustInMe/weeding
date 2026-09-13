@@ -1,0 +1,24 @@
+<svg width="180" height="40" viewBox="0 0 180 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Лавровая веточка-орнамент (цвет задаётся через CSS currentColor) -->
+  <g stroke="currentColor" stroke-width="1.2" stroke-linecap="round">
+    <path d="M18 20 C 40 12, 60 12, 78 20" fill="none"/>
+    <path d="M162 20 C 140 12, 120 12, 102 20" fill="none"/>
+    <!-- левая ветка: листья -->
+    <path d="M30 16 q -4 -7 -11 -8 q 3 7 11 8z" fill="currentColor" stroke="none"/>
+    <path d="M44 13.5 q -2 -8 -9 -10 q 1.5 8 9 10z" fill="currentColor" stroke="none"/>
+    <path d="M58 13 q 0 -8 -6 -12 q -0.5 8 6 12z" fill="currentColor" stroke="none"/>
+    <path d="M30 24 q -4 7 -11 8 q 3 -7 11 -8z" fill="currentColor" stroke="none"/>
+    <path d="M44 26.5 q -2 8 -9 10 q 1.5 -8 9 -10z" fill="currentColor" stroke="none"/>
+    <path d="M58 27 q 0 8 -6 12 q -0.5 -8 6 -12z" fill="currentColor" stroke="none"/>
+    <!-- правая ветка: листья (зеркально) -->
+    <path d="M150 16 q 4 -7 11 -8 q -3 7 -11 8z" fill="currentColor" stroke="none"/>
+    <path d="M136 13.5 q 2 -8 9 -10 q -1.5 8 -9 10z" fill="currentColor" stroke="none"/>
+    <path d="M122 13 q 0 -8 6 -12 q 0.5 8 -6 12z" fill="currentColor" stroke="none"/>
+    <path d="M150 24 q 4 7 11 8 q -3 -7 -11 -8z" fill="currentColor" stroke="none"/>
+    <path d="M136 26.5 q 2 8 9 10 q -1.5 -8 -9 -10z" fill="currentColor" stroke="none"/>
+    <path d="M122 27 q 0 8 6 12 q 0.5 -8 -6 -12z" fill="currentColor" stroke="none"/>
+  </g>
+  <circle cx="90" cy="20" r="2.6" fill="currentColor"/>
+  <circle cx="84" cy="20" r="1.6" fill="currentColor"/>
+  <circle cx="96" cy="20" r="1.6" fill="currentColor"/>
+</svg>

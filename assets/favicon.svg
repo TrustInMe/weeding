@@ -1,0 +1,21 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Фавикон: сердце с веточками в палитре бургунди/фисташка -->
+  <rect width="64" height="64" rx="14" fill="#F7F4EC"/>
+  <rect x="2.5" y="2.5" width="59" height="59" rx="12" stroke="#7E9A63" stroke-width="1.4" opacity="0.7"/>
+  <!-- веточки -->
+  <g stroke="#7E9A63" stroke-width="1.6" stroke-linecap="round">
+    <path d="M10 24 C 16 18, 22 16, 28 17" fill="none"/>
+    <path d="M54 24 C 48 18, 42 16, 36 17" fill="none"/>
+  </g>
+  <g fill="#A9C08C">
+    <ellipse cx="15" cy="20.5" rx="4.4" ry="2.6" transform="rotate(-28 15 20.5)"/>
+    <ellipse cx="21.5" cy="18" rx="4.4" ry="2.6" transform="rotate(-18 21.5 18)"/>
+    <ellipse cx="49" cy="20.5" rx="4.4" ry="2.6" transform="rotate(28 49 20.5)"/>
+    <ellipse cx="42.5" cy="18" rx="4.4" ry="2.6" transform="rotate(18 42.5 18)"/>
+  </g>
+  <!-- сердце -->
+  <path d="M32 47 C 24 41, 17.5 35.6, 17.5 29.4 C 17.5 25 20.8 21.8 24.9 21.8 C 27.6 21.8 29.9 23.2 32 25.7 C 34.1 23.2 36.4 21.8 39.1 21.8 C 43.2 21.8 46.5 25 46.5 29.4 C 46.5 35.6 40 41 32 47 Z"
+        fill="#6B2230" stroke="#8A3244" stroke-width="1.2"/>
+  <!-- блик на сердце -->
+  <path d="M24.6 26.2 C 25.2 24.6 26.6 23.6 28.3 23.4 C 27 24.8 26.2 26 25.9 27.6 Z" fill="#A4465A"/>
+</svg>

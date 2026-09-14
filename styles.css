@@ -397,6 +397,7 @@ img { max-width: 100%; display: block; }
   display: flex;
   justify-content: center;
   padding: 0;
+  margin: -34px 0;            /* на десктопе прижимаем разделители плотнее */
   color: var(--pistachio-deep);
   opacity: 0.9;
 }
@@ -818,6 +819,43 @@ img { max-width: 100%; display: block; }
 .schedule__item.is-reached .schedule__event { opacity: 1; transform: none; }
 
 /* ============================================================
+   Футер
+   ============================================================ */
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  padding: 72px 16px 96px;
+  text-align: center;
+  background: linear-gradient(180deg, var(--pistachio-tint) 0%, var(--cream) 60%);
+}
+.footer__branch {
+  width: 30px;
+  height: 63px;
+  color: var(--pistachio-deep);
+  margin-bottom: 6px;
+}
+.footer__text {
+  font-family: var(--font-head);
+  font-size: 26px;
+  line-height: 34px;
+  color: var(--burgundy);
+}
+.footer__heart { font-size: 22px; line-height: 1; }
+.footer__names {
+  font-size: 14px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-top: 10px;
+}
+@media (max-width: 767px) {
+  .footer { padding: 56px 16px 72px; }
+  .footer__text { font-size: 22px; }
+}
+
+/* ============================================================
    Кнопка «наверх» (плавающая, сбоку)
    ============================================================ */
 .to-top {
@@ -855,6 +893,7 @@ img { max-width: 100%; display: block; }
 
 /* --- 2. Планшет ~1024 --- */
 @media (max-width: 1279px) {
+  .ornament { margin: -26px 0; }
   .section { padding: 88px 16px; }
   .hero__names { font-size: 50px; line-height: 60px; }
   .hero__frame { inset: 16px; }
@@ -862,6 +901,7 @@ img { max-width: 100%; display: block; }
 
 /* --- 3. Планшет ~768 --- */
 @media (max-width: 1023px) {
+  .ornament { margin: 0; }    /* на планшетах и мобильных — без сдвига */
   :root { --content-width: 600px; }
   .section { padding: 80px 16px; }
   .section__inner { gap: 56px; }
@@ -884,8 +924,11 @@ img { max-width: 100%; display: block; }
   .invite__photos { grid-template-columns: 1fr; }   /* на мобильных — друг под другом, крупно */
   .invite__photo { height: 210px; }
   .rsvp__choices { width: 100%; justify-content: center; }
-  .schedule__time { font-size: 20px; line-height: 26px; padding-right: 20px; }
-  .schedule__event { padding-left: 20px; }
+  .schedule__time { font-size: 20px; line-height: 26px; padding-right: 26px; }
+  .schedule__event { padding-left: 26px; }
+  .schedule__item { padding-bottom: 50px; }
+  .schedule__title { line-height: 30px; }
+  .schedule__place { margin-top: 10px; }
   .schedule__title { font-size: 19px; line-height: 24px; }
   .faq__question { font-size: 20px; }
   .ornament img { width: 150px; }
@@ -906,8 +949,9 @@ img { max-width: 100%; display: block; }
 
   .rsvp__name { font-size: 15px; }
   .rsvp__choice span { padding: 12px 20px; font-size: 15px; }
-  .schedule__time { font-size: 18px; padding-right: 14px; }
-  .schedule__event { padding-left: 14px; }
+  .schedule__time { font-size: 18px; padding-right: 22px; }
+  .schedule__event { padding-left: 22px; }
+  .schedule__item { padding-bottom: 44px; }
   .dinner__map { height: 360px; border-radius: 16px; }
   .dinner { padding-bottom: 72px; }
   .dinner__map-card { min-width: 0; width: calc(100% - 24px); padding: 12px; bottom: 10px; }

@@ -37,13 +37,27 @@ document.addEventListener('DOMContentLoaded', function () {
     hint.hidden = false;
   }
 
+  // Предпочтения по алкоголю — только тем, кто придёт
+  var drinksBox = document.getElementById('rsvpDrinks');
+  form.addEventListener('change', function (e) {
+    if (e.target.name !== 'attendance') return;
+    var coming = e.target.value !== 'Не смогу';
+    drinksBox.hidden = !coming;
+    if (!coming) {
+      var d = form.querySelector('input[name="drinks"]:checked');
+      if (d) d.checked = false;
+    }
+  });
+
   function sendToEmail(name, answer) {
     // Канал: Google Apps Script (инструкция и код — в apps-script/Code.gs)
     if (!scriptUrl) return Promise.resolve(false); // URL не задан — письмо не шлём
     // form-encoded POST = «простой» запрос: без CORS-предпроверки
+    var drinks = form.querySelector('input[name="drinks"]:checked');
+    var drinksText = drinks ? drinks.value : '';
     var params = new URLSearchParams({
       name: name,
-      answer: answer,
+      answer: answer + (drinksText ? ' · напитки: ' + drinksText : ''),
       date: new Date().toLocaleString('ru-RU'),
     });
     return fetch(scriptUrl, {

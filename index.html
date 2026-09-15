@@ -108,10 +108,38 @@
           <span>Буду</span>
         </label>
         <label class="rsvp__choice">
+          <input type="radio" name="attendance" value="Буду +1">
+          <span>Буду +1</span>
+        </label>
+        <label class="rsvp__choice">
           <input type="radio" name="attendance" value="Не смогу">
           <span>Не смогу</span>
         </label>
       </div>
+
+      <!-- Предпочтения по алкоголю: видно только тем, кто придёт -->
+      <div class="rsvp__drinks" id="rsvpDrinks" hidden>
+        <p class="rsvp__drinks-title">Предпочтения по алкоголю</p>
+        <div class="rsvp__choices rsvp__choices--drinks" role="radiogroup" aria-label="Предпочтения по алкоголю">
+          <label class="rsvp__choice rsvp__choice--sm">
+            <input type="radio" name="drinks" value="Белое вино">
+            <span>Белое вино</span>
+          </label>
+          <label class="rsvp__choice rsvp__choice--sm">
+            <input type="radio" name="drinks" value="Красное вино">
+            <span>Красное вино</span>
+          </label>
+          <label class="rsvp__choice rsvp__choice--sm">
+            <input type="radio" name="drinks" value="Крепкий алкоголь">
+            <span>Крепкий алкоголь</span>
+          </label>
+          <label class="rsvp__choice rsvp__choice--sm">
+            <input type="radio" name="drinks" value="Без разницы">
+            <span>Без разницы</span>
+          </label>
+        </div>
+      </div>
+
       <button class="btn btn--dark rsvp__submit" type="submit">Отправить ответ</button>
       <p class="rsvp__hint" id="rsvpHint" hidden></p>
     </form>

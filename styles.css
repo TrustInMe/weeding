@@ -484,6 +484,35 @@ img { max-width: 100%; display: block; }
 .rsvp__choice input:focus-visible + span { outline: 2px solid var(--burgundy-soft); outline-offset: 2px; }
 .rsvp__hint { font-size: 16px; color: var(--text-muted); }
 
+/* --- Предпочтения по алкоголю --- */
+.rsvp__drinks {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+  animation: drinks-in 0.4s ease both;
+}
+.rsvp__drinks[hidden] { display: none; }
+@keyframes drinks-in {
+  from { opacity: 0; transform: translateY(-8px); }
+  to   { opacity: 1; transform: none; }
+}
+.rsvp__drinks-title {
+  font-family: var(--font-head);
+  font-size: 19px;
+  color: var(--burgundy);
+  letter-spacing: 0.03em;
+}
+.rsvp__choices--drinks { flex-wrap: wrap; justify-content: center; gap: 12px; }
+.rsvp__choice--sm span {
+  padding: 11px 18px;
+  font-size: 14px;
+}
+@media (max-width: 479px) {
+  .rsvp__choice--sm span { padding: 10px 14px; font-size: 13px; }
+}
+
 /* --- Заглушка «успешно отправлено» --- */
 .rsvp__done {
   display: flex;
@@ -617,22 +646,44 @@ img { max-width: 100%; display: block; }
   width: 64px;
   height: 64px;
   border-radius: 50%;
-  background: var(--dot);
+  /* атласный перелив: диагональный градиент свет→база→тень */
+  background:
+    linear-gradient(135deg,
+      color-mix(in srgb, var(--dot) 55%, white) 0%,
+      var(--dot) 38%,
+      color-mix(in srgb, var(--dot) 70%, black) 72%,
+      color-mix(in srgb, var(--dot) 82%, white) 100%);
   border: 3px solid var(--cream);
   box-shadow: 0 6px 18px rgba(46, 35, 36, 0.28), inset 0 0 0 1px rgba(46, 35, 36, 0.08);
   position: relative;
+  overflow: hidden;
   transition: transform 0.25s ease;
 }
-/* маленький блик на кружке — эффект пуговки/ленты */
+/* едва заметная текстура переплетения нитей (атласное саржевое плетение) */
+.palette__dot::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(45deg,
+    rgba(255, 255, 255, 0.10) 0 1px, transparent 1px 3px),
+    repeating-linear-gradient(-45deg,
+    rgba(0, 0, 0, 0.08) 0 1px, transparent 1px 3px);
+}
+/* глянцевый блик атласа */
 .palette__dot::after {
   content: '';
   position: absolute;
-  left: 16%; top: 12%;
-  width: 34%; height: 24%;
+  left: -30%; top: -55%;
+  width: 85%; height: 110%;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.28);
+  background: linear-gradient(115deg, rgba(255,255,255,0.50) 0%, rgba(255,255,255,0.16) 38%, transparent 60%);
+  transform: rotate(12deg);
 }
-.palette__item:hover .palette__dot { transform: scale(1.12) rotate(-4deg); }
+.palette__item:hover .palette__dot {
+  transform: scale(1.12) rotate(-4deg);
+  /* перелив при наведении — блик «скользит» */
+  background-position: 30% 30%;
+}
 .palette__name {
   font-size: 14px;
   line-height: 18px;

@@ -15,7 +15,10 @@
  *    и вставьте его в config.js сайта в rsvpScriptUrl.
  */
 
-var EMAIL = 'andrej-vilenskij@yandex.ru';   // ← куда приходят ответы
+var EMAILS = [                               // ← кому приходят ответы
+  'andrej-vilenskij@yandex.ru',
+  'kseniya-litvinova@mail.ru',
+];
 var SUBJECT = 'RSVP: свадьба Андрея и Ксении';
 
 function doPost(e) {
@@ -31,7 +34,9 @@ function doPost(e) {
              'Дата: ' + new Date().toLocaleString('ru-RU');
 
   try {
-    MailApp.sendEmail(EMAIL, SUBJECT, body);
+    EMAILS.forEach(function (addr) {
+      MailApp.sendEmail(addr, SUBJECT, body);
+    });
   } catch (err) {
     return ContentService.createTextOutput('error')
       .setMimeType(ContentService.MimeType.TEXT);

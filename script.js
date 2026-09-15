@@ -44,8 +44,10 @@ document.addEventListener('DOMContentLoaded', function () {
     var coming = e.target.value !== 'Не смогу';
     drinksBox.hidden = !coming;
     if (!coming) {
-      var d = form.querySelector('input[name="drinks"]:checked');
-      if (d) d.checked = false;
+      ['drinks', 'transfer'].forEach(function (n) {
+        var d = form.querySelector('input[name="' + n + '"]:checked');
+        if (d) d.checked = false;
+      });
     }
   });
 
@@ -55,9 +57,14 @@ document.addEventListener('DOMContentLoaded', function () {
     // form-encoded POST = «простой» запрос: без CORS-предпроверки
     var drinks = form.querySelector('input[name="drinks"]:checked');
     var drinksText = drinks ? drinks.value : '';
+    var transfer = form.querySelector('input[name="transfer"]:checked');
+    var transferText = transfer ? transfer.value : '';
+    var extras =
+      (transferText ? ' · трансфер: ' + transferText : '') +
+      (drinksText ? ' · напитки: ' + drinksText : '');
     var params = new URLSearchParams({
       name: name,
-      answer: answer + (drinksText ? ' · напитки: ' + drinksText : ''),
+      answer: answer + extras,
       date: new Date().toLocaleString('ru-RU'),
     });
     return fetch(scriptUrl, {

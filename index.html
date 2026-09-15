@@ -117,9 +117,20 @@
         </label>
       </div>
 
-      <!-- Предпочтения по алкоголю: видно только тем, кто придёт -->
+      <!-- Дополнительные вопросы: видны только тем, кто придёт -->
       <div class="rsvp__drinks" id="rsvpDrinks" hidden>
-        <p class="rsvp__drinks-title">Предпочтения по алкоголю</p>
+        <p class="rsvp__drinks-title">Нужен ли обратный трансфер (примерно в&nbsp;23:00)?</p>
+        <div class="rsvp__choices rsvp__choices--drinks" role="radiogroup" aria-label="Обратный трансфер">
+          <label class="rsvp__choice rsvp__choice--sm">
+            <input type="radio" name="transfer" value="Да">
+            <span>Да</span>
+          </label>
+          <label class="rsvp__choice rsvp__choice--sm">
+            <input type="radio" name="transfer" value="Нет">
+            <span>Нет</span>
+          </label>
+        </div>
+        <p class="rsvp__drinks-title" style="margin-top:10px">Предпочтения по алкоголю</p>
         <div class="rsvp__choices rsvp__choices--drinks" role="radiogroup" aria-label="Предпочтения по алкоголю">
           <label class="rsvp__choice rsvp__choice--sm">
             <input type="radio" name="drinks" value="Белое вино">
@@ -190,8 +201,8 @@
       </div>
       <div class="faq__item">
         <h3 class="faq__question">Возможно ли приехать на своем автомобиле?</h3>
-        <p class="faq__answer">Да, на территории отеля имеется парковка. А если хочется подъехать с шиком — вдохновляйтесь!</p>
-        <img class="faq__image faq__image--wide" src="assets/faq_car.jpg" alt="Белый свадебный лимузин" loading="lazy">
+        <p class="faq__answer">Да, на территории Оранжереи имеется парковка. А если хочется подъехать с шиком — вдохновляйтесь!</p>
+        <img class="faq__image faq__image--wide" src="assets/faq_car.jpg" alt="Белый Rolls-Royce Ghost" loading="lazy">
       </div>
       <div class="faq__item">
         <h3 class="faq__question">Кому можно задать вопросы по организации мероприятия?</h3>
